@@ -4,10 +4,15 @@ import hero from '../pic/hero.png'
 import skill1 from '../pic/skills1.png'
 import skill2 from '../pic/skills2.png'
 import skill3 from '../pic/skills3.png'
-import { Typewriter } from 'react-simple-typewriter'
+import { useTypewriter, Cursor } from "react-simple-typewriter";
+import "react-simple-typewriter/dist/index";
 
 
 const Home = () => {
+    const { text } = useTypewriter({
+        words: [" Professional Coder.", " Developer.", " Husband.", " Daddy."],
+        loop: 0
+    });
     return (
         <>
             <section className="hero" id="home" >
@@ -15,14 +20,15 @@ const Home = () => {
                     <div className="left top">
                         <h3>WELCOME TO MY WORLD</h3>
                         <h1>
-                            Hi, I'm <span>
-                                Leonardo Severo
-                            </span>
+                            Hi, I'm <span>Leonardo Severo</span> 
                         </h1>
                         <h2>
                             a
                             <span>
-                                <Typewriter words={[" Professional Coder.", " Developer."]} loop cursor cursorStyle='|' typeSpeed={70} deleteSpeed={50} delaySpeed={1000} />
+                            {text}
+                            <Cursor cursorStyle='_' typeSpeed={70} deleteSpeed={50} delaySpeed={1000}/>
+                        
+                            {/* <Typewriter words={[" Professional Coder.", " Developer."]} loop cursor cursorStyle='|' typeSpeed={70} deleteSpeed={50} delaySpeed={1000} /> */}
                             </span>
                         </h2>
 
